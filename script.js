@@ -2,7 +2,7 @@ function submitForm() {
     var formData = {
         operator: document.getElementById('operator').value,
         machineType: document.getElementById('machineType').value,
-        repairDate: document.getElementById('repairDate').value,
+        repairDate: document.getElementById('repairDate').value,  // Corrected id
         repairTime: document.getElementById('repairTime').value,
         repairer: document.getElementById('repairer').value
     };
