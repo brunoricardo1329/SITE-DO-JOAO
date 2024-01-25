@@ -45,18 +45,10 @@ error_log('Received data: ' . print_r($data, true));
 $insertQuery = "INSERT INTO tabela (operator, machineType, repairDate, repairTime, repairer) VALUES (?, ?, ?, ?, ?)";
 $stmt = $mysqli->prepare($insertQuery);
 
-if (!$stmt) {
-    die(json_encode(['error' => 'Failed to prepare statement: ' . $mysqli->error]));
-}
-
-if ($stmt->bind_param('sssss', $data['operator'], $data['machineType'], $data['repairDate'], $data['repairTime'], $data['repairer'])) {
-    if ($stmt->execute()) {
-        echo json_encode(['success' => true]);
-    } else {
-        die(json_encode(['error' => 'Failed to insert data: ' . $stmt->error]));
-    }
+if ($stmt->execute()) {
+    echo json_encode(['success' => true, 'message' => 'Dados enviados com sucesso!']);
 } else {
-    die(json_encode(['error' => 'Failed to bind parameters: ' . $stmt->error]));
+    echo json_encode(['error' => 'Failed to insert data: ' . $stmt->error]);
 }
 
 $stmt->close();

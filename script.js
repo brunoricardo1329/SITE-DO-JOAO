@@ -1,3 +1,5 @@
+// script.js
+
 function submitForm() {
     var formData = {
         operator: document.getElementById('operator').value,
@@ -17,12 +19,10 @@ function submitForm() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // A inserção foi bem-sucedida
-            alert('Dados enviados com sucesso!');
+            alert(data.message);  // Mensagem de sucesso
             // Aqui você pode adicionar qualquer outra ação de sucesso desejada
         } else {
-            // A inserção falhou, mostra a mensagem de erro
-            alert('Erro: ' + data.error);
+            alert('Erro: ' + data.error);  // Mensagem de erro
             // Aqui você pode adicionar qualquer outra ação de tratamento de erro desejada
         }
     })
