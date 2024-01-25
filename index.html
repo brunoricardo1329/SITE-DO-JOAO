@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Formulário Futurístico</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário Futurístico</h1>
+        <form id="futuristicForm">
+            <label for="operator">Nome do Operador:</label>
+            <select id="operator" name="operator">
+                <option value="Bruno">Bruno</option>
+                <option value="João">João</option>
+                <option value="Tiago">Tiago</option>
+            </select>
+
+            <label for="machineType">Tipo de Máquina:</label>
+            <select id="machineType" name="machineType">
+                <option value="martelo">Martelo</option>
+                <option value="tesoura">Tesoura</option>
+                <option value="facao">Fação</option>
+            </select>
+
+            <label for="repairDate">Data de Reparo:</label>
+            <input type="date" id="repairDate" name="repairDate">
+
+            <label for="repairTime">Data e Hora do Reparo:</label>
+            <input type="datetime-local" id="repairTime" name="repairTime">
+
+            <label for="repairer">Pessoa que Consertou:</label>
+            <select id="repairer" name="repairer">
+                <option value="Tiao">Tião</option>
+                <option value="Duda">Duda</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Enviar</button>
+        </form>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
